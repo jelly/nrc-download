@@ -1,0 +1,9 @@
+[Unit]
+Description=NRC download timer
+
+[Timer]
+OnCalendar=Mon,Tue,Wed,Thu,Fri,Sat *-* 7:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

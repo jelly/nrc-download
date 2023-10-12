@@ -1,0 +1,13 @@
+*.pyc
+*.swp
+*.swo
+env/
+**/**__pycache__
+
+.mypy_cache/
+
+# rope
+.ropeproject/
+
+# coverage
+.coverage

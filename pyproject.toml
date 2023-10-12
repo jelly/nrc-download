@@ -1,0 +1,62 @@
+[project]
+name = "nrc-download"
+version = "0.0.1"
+authors = [
+  { name="Jelle van der Waa", email="jelle@vdwaa.nl" },
+]
+description = "Automatically fetch today's NRC newspaper in ePub format"
+readme = "README.md"
+requires-python = ">=3.10"
+depends= [
+    "playright"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+[project.scripts]
+nrc-download = "nrc_download:main"
+
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[tool.mypy]
+mypy_path = 'src'
+
+[tool.ruff]
+select = [
+    "A",       # flake8-builtins
+    "B",       # flake8-bugbear
+    "C4",      # flake8-comprehensions
+    "D300",    # pydocstyle: Forbid ''' in docstrings
+    "E",       # pycodestyle
+    "EXE",     # flake8-executable
+    "F",       # pyflakes
+    "FBT",     # flake8-boolean-trap
+    "G",       # flake8-logging-format
+    "I",       # isort
+    "ICN",     # flake8-import-conventions
+    "ISC",     # flake8-implicit-str-concat
+    "PIE",     # flake8-pie
+    "PLE",     # pylint errors
+    "PGH",     # pygrep-hooks
+    "PT",      # flake8-pytest-style
+    "RSE",     # flake8-raise
+    "RUF",     # ruff rules
+    "T10",     # flake8-debugger
+    "TCH",     # flake8-type-checking
+    "UP032",   # f-string
+    "W",       # warnings (mostly whitespace)
+    "YTT",     # flake8-2020
+]
+exclude = [
+    ".git/",
+]
+line-length = 118
+src = []
+
+[tool.ruff.flake8-pytest-style]
+fixture-parentheses = false
+mark-parentheses = false

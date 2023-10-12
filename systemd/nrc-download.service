@@ -1,0 +1,14 @@
+[Unit]
+Description=Fetch NRC Paper
+After=network.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=-/etc/conf.d/nrc-download
+WorkingDirectory=/home/nrc/nrc-download/
+ExecStart=/usr/bin/python /home/nrc/.local/bin/nrc-download
+Nice=5
+ProtectSystem=true
+
+[Install]
+WantedBy=multi-user.target
